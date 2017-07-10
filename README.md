@@ -37,4 +37,18 @@ Uses:
                 });
             }
         });
-        ```
+        
+ ```
+
+#### gradle
+
+```
+ repositories {
+        maven { url 'https://jitpack.io' }
+ }
+ ```
+ ```
+
+ compile 'com.github.fly7632785:JafirZipProgressUtil:1.0.1'
+```
+
