@@ -30,9 +30,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
+version = "1.0.0"
 
-def siteUrl = 'https://github.com/JohnyPeng/ActionSheetDialog'      // 项目的主页
-def gitUrl = 'https://github.com/JohnyPeng/ActionSheetDialog.git'   // Git仓库的url
+def siteUrl = 'https://github.com/fly7632785/JafirZipProgressUtil'      // 项目的主页
+def gitUrl = 'https://github.com/fly7632785/JafirZipProgressUtil.git'   // Git仓库的url
 group = "com.jafir.ziputil"       // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
