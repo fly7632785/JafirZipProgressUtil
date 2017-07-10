@@ -3,7 +3,6 @@ package com.jafir.ziputil;
 import android.os.Handler;
 import android.os.Looper;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -209,31 +208,6 @@ public class ZipProgressUtil {
             }
         }
 
-        private void zip(File file, ZipOutputStream zipOut, String outPathString, long sumLength, long ziplength) throws Exception {
-            outPathString = outPathString + (outPathString.trim().length() == 0 ? "" : File.separator)
-                    + file.getName();
-            if (file.isDirectory()) {
-                File[] fileList = file.listFiles();
-                for (File f : fileList) {
-                    zip(f, zipOut, outPathString, sumLength, ziplength);
-                }
-            } else {
-                byte buffer[] = new byte[BUFF_SIZE];
-                BufferedInputStream in = new BufferedInputStream(new FileInputStream(file),
-                        BUFF_SIZE);
-                zipOut.putNextEntry(new ZipEntry(outPathString));
-                int realLength;
-                while ((realLength = in.read(buffer)) != -1) {
-                    sumLength += realLength;
-                    int progress = (int) ((sumLength * 100) / ziplength);
-                    updateProgress(progress, listener);
-                    zipOut.write(buffer, 0, realLength);
-                }
-                in.close();
-                zipOut.flush();
-                zipOut.closeEntry();
-            }
-        }
 
         int lastProgress = 0;
 
