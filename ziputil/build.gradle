@@ -93,8 +93,8 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        userOrg = "JafirRepository"//JCenter上创建的的Organization
-        repo = "JafirZipProgressUtil"//你要上传的库的名字
+        userOrg = "jafir"//JCenter上创建的的Organization
+        repo = "JafirRepository"//你要上传的库的名字
         name = "JafirZipProgressUtil"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
